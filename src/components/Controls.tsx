@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles/Controls.module.css';
-import { Player, GameState } from './Types';
 
 type ControlsProps = {
-  currentPlayer: Player;
-  gameState: GameState;
-  buttonState: {
-    hitDisabled: boolean;
-    standDisabled: boolean;
-    resetDisabled: boolean;
-  };
-  betEvent: (amount: number) => void;
-  hitEvent: () => void;
-  standEvent: () => void;
-  resetEvent: () => void;
+  balance: number,
+  gameState: number,
+  buttonState: any,
+  betEvent: any,
+  hitEvent: any,
+  standEvent: any,
+  resetEvent: any
 };
 
 const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, betEvent, hitEvent, standEvent, resetEvent }) => {

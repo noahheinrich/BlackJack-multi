@@ -1,35 +1,22 @@
 import React from 'react';
-import { Player } from './Types';
-import './Status.css';
+import styles from './styles/Status.module.css';
 
 type StatusProps = {
-  message: string;
-  players: Player[];
+  message: string,
+  balance: number
 };
 
-const Status: React.FC<StatusProps> = ({ message, players }) => {
+const Status: React.FC<StatusProps> = ({ message, balance }) => {
   return (
-    <div className="status-container">
-      <div className="message">{message}</div>
-      <div className="players-status">
-        {players.map((player) => (
-          <div key={player.id} className={`player-status ${player.isCurrentPlayer ? 'active' : ''}`}>
-            <div className="player-name">{player.name}</div>
-            <div className="player-info">
-              <div className="balance">
-                Balance: ${player.balance}
-              </div>
-              {player.bet > 0 && (
-                <div className="bet">
-                  Current Bet: ${player.bet}
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
+    <div className={styles.statusContainer}>
+      <div className={styles.status}>
+        <h1 className={styles.value}>{message}</h1>
+      </div>
+      <div className={styles.balance}>
+        <h1 className={styles.value}>${balance}</h1>
       </div>
     </div>
   );
-};
+}
 
 export default Status;

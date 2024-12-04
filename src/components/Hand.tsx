@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './styles/Hand.module.css';
 import Card from './Card';
-import { Player } from './Types';
 
 type HandProps = {
-  title: string;
-  cards: any[];
-  isActive?: boolean;
+  title: string,
+  cards: any[]
 };
 
 const Hand: React.FC<HandProps> = ({ title, cards }) => {
